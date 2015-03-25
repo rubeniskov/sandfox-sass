@@ -16,7 +16,6 @@
  - update: src base dependencies
  - add: Base structure src directory
 
-
 ## version : `0.1.0`
 
  - add: package.json npm config
