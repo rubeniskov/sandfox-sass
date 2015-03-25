@@ -1,5 +1,10 @@
 # Changelog
 
+## version : `0.2.1`
+
+ - fix: wrong file name _grid -> _layout on structure directory
+ - fix: CHANGELOG remove version commits wrong
+
 ## version : `0.2.0`
 
  - add: .gitignore with exclusion rules
