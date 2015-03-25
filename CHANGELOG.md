@@ -1,5 +1,10 @@
 # Changelog
 
+## version : `0.4.0`
+
+ - add: unit BDD testing tool and configure to raise error on travis test
+ - update: CHANGELOG.md remove end of line space
+
 ## version : `0.3.0`
 
  - add: Gruntfile config with the default tasks
@@ -15,7 +20,6 @@
  - add: .gitignore with exclusion rules
  - update: src base dependencies
  - add: Base structure src directory
-
 
 ## version : `0.1.0`
 
