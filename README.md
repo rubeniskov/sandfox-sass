@@ -77,7 +77,7 @@ src/
 | 
 |– layout/
 |   |
-|   `– _grid.scss
+|   `– _layout.scss
 | 
 `– main.scss
 
