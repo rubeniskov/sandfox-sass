@@ -1,6 +1,6 @@
 {
     "name": "sandfox-sass",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "main": "Gruntfile.js",
     "description": "Sass library with utilities and responsive components",
     "keywords": [
@@ -11,7 +11,8 @@
     ],
     "scripts": {
         "watch": "grunt watch",
-        "compile": "grunt sass"
+        "compile": "grunt sass",
+        "test": "grunt travis --verbose"
     },
     "repository": {
         "type": "git",
@@ -34,5 +35,11 @@
     "bugs": {
         "url": "https://github.com/foxnet-git/sandfox-sass/issues"
     },
-    "homepage": "https://github.com/foxnet-git/sandfox-sass"
+    "homepage": "https://github.com/foxnet-git/sandfox-sass",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-sass": "git+https://github.com/foxnet-git/grunt-sass.git",
+        "bootcamp": "^1.1.7"
+    }
 }

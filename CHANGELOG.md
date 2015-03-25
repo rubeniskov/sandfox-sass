@@ -1,5 +1,10 @@
 # Changelog
 
+## version : `0.3.0`
+
+ - add: Gruntfile config with the default tasks
+ - update: package.json devDependencies and script travis test
+
 ## version : `0.2.1`
 
  - fix: wrong file name _grid -> _layout on structure directory
