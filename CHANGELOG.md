@@ -1,5 +1,11 @@
 # Changelog
 
+## version : [`0.5.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.5.0)
+
+ - [add: .travis.yml config with node 0.12 version](https://github.com/foxnet-git/sandfox-sass/commit/9ae06af3e56c8dee1082ca39de731ef3503e22b8)
+ - [update: package.json git url tags and commits](https://github.com/foxnet-git/sandfox-sass/commit/a1a0677e6d2c911cc2b7dcb3659232136c0a6ca2)
+ - [update: CHANGELOG.md link formatted](https://github.com/foxnet-git/sandfox-sass/commit/bc7b6672cffa95c914a38c1aa112100e2b0a0ab3)
+
 ## version : [`0.4.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.4.0)
 
  - [add: unit BDD testing tool and configure to raise error on travis test](https://github.com/foxnet-git/sandfox-sass/commit/9ecc315b60ad3599ed84e99b370abb66e438ddba)
