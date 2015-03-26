@@ -1,0 +1,23 @@
+// Returns the natural logarithm of a number.
+// @param {Number} $start
+// @param {Number} $key
+// @param {Number} $number
+// @example
+//     math-maclaurin(2)  // 0.69315
+//     math-maclaurin(10) // 2.30259
+@function math-maclaurin($start, $key, $number) {
+    $value: $start;
+    $add: 0;
+    @for $i from 1 through 50 {
+        @if $add==0 {
+            $value: $value - ( math-pow($number, $key) / math-fact($key));
+            $add: 1;
+        }
+        @else {
+            $value: $value + ( math-pow($number, $key) / math-fact($key));
+            $add: 0;
+        }
+        $key: $key + 2;
+    }
+    @return $value;
+}
