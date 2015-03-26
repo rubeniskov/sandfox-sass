@@ -1,0 +1,144 @@
+// Constants
+@include describe("Function math-contants") {
+    @include it("should equal to defined values") {
+        @include should(expect($E), to(be-close-to(2.718281828459045, 5)));
+        @include should(expect($PI), to(be-close-to(3.141592653589793, 5)));
+        @include should(expect($LN2), to(be-close-to(0.6931471805599453, 5)));
+        @include should(expect($LN10), to(be-close-to(2.302585092994046, 5)));
+        @include should(expect($LOG2E), to(be-close-to(1.4426950408889634, 5)));
+        @include should(expect($LOG10E), to(be-close-to(0.4342944819032518, 5)));
+        @include should(expect($SQRT1_2), to(be-close-to(0.7071067811865476, 5)));
+        @include should(expect($SQRT2), to(be-close-to(1.4142135623730951, 5)));
+    }
+}
+
+// Factorial
+@include describe("Function math-fact") {
+    @include it("should calculate factorials") {
+        @include should(expect( math-fact(0)), to( equal( 1)));
+        @include should(expect( math-fact(8)), to( equal( 40320)));
+    }
+}
+
+// Power functions
+@include describe("Function math-pow") {
+    @include it("should calculate exponents") {
+        @include should(expect( math-pow(4, 2)), to( equal( 16)));
+    }
+    @include it("should calculate negative exponents") {
+        @include should(expect( math-pow(4, -2)), to( equal( 0.0625)));
+    }
+    @include it("should calculate decimal exponents") {
+        @include should(expect( math-pow(4, 0.2)), to( be-close-to( 1.31951, 5)));
+    }
+}
+
+// Square root
+@include describe("Function math-sqrt") {
+    @include it("should calculate square roots") {
+        @include should(expect( math-sqrt(2)), to( be-close-to( 1.41421, 5)));
+        @include should(expect( math-sqrt(5)), to( be-close-to( 2.23607, 5)));
+    }
+}
+
+// Exponential function
+@include describe("Function math-exp") {
+    @include it("should calculate exponents of eulers constant") {
+        @include should(expect( math-exp(1)), to( be-close-to( 2.71828, 5)));
+    }
+    @include it("should calculate negative exponents of eulers constant") {
+        @include should(expect( math-exp(-1)), to( be-close-to( 0.36788, 5)));
+    }
+}
+
+// Logarithms
+@include describe("Function math-log") {
+    @include it("should calculate the natural logarithm of a number") {
+        @include should(expect( math-log(2)), to( be-close-to( 0.69315, 5)));
+        @include should(expect( math-log(10)), to( be-close-to( 2.30259, 5)));
+    }
+}
+
+// Trigonometric functions
+@include describe("Function math-sin") {
+    @include it("should calculate the sine of a number") {
+        @include should(expect( math-sin(1.0472)), to( be-close-to( 0.86603, 5)));
+        @include should(expect( math-sin(60deg)), to( be-close-to( 0.86603, 5)));
+        @include should(expect( math-sin(0)), to( be-close-to( 0.0, 2)));
+        @include should(expect( math-sin($PI/2)), to( be-close-to( 1, 2)));
+        @include should(expect( math-sin($PI)), to( be-close-to( 0.0, 2)));
+        @include should(expect( math-sin(3*$PI/2)), to( be-close-to( -1, 2)));
+    }
+}
+
+@include describe("Function math-cos") {
+    @include it("should calculate the cosine of a number") {
+        @include should(expect( math-cos(0.7854)), to( be-close-to( 0.70711, 5)));
+        @include should(expect( math-cos(45deg)), to( be-close-to( 0.70711, 5)));
+        @include should(expect( math-cos(0)), to( be-close-to( 1, 2)));
+        @include should(expect( math-cos($PI/2)), to( be-close-to( 0, 2)));
+        @include should(expect( math-cos($PI)), to( be-close-to( -1, 2)));
+        @include should(expect( math-cos(3*$PI/2)), to( be-close-to( 0, 2)));
+    }
+}
+
+@include describe("Function math-tan") {
+    @include it("should calculate the tangent of a number") {
+        @include should(expect( math-tan(0.5236)), to( be-close-to( 0.57735, 5)));
+        @include should(expect( math-tan(30deg)), to( be-close-to( 0.57735, 5)));
+    }
+}
+
+@include describe("Function math-csc") {
+    @include it("should calculate the cosecant of a number") {
+        @include should(expect( math-csc(1.0472)), to( be-close-to( 1.1547, 5)));
+        @include should(expect( math-csc(60deg)), to( be-close-to( 1.1547, 5)));
+    }
+}
+
+@include describe("Function math-sec") {
+    @include it("should calculate the secant of a number") {
+        @include should(expect( math-sec(0.7854)), to( be-close-to( 1.41422, 4)));
+        @include should(expect( math-sec(45deg)), to( be-close-to( 1.41422, 4)));
+    }
+}
+
+@include describe("Function math-cot") {
+    @include it("should calculate the cotangent of a number") {
+        @include should(expect( math-cot(0.5236)), to( be-close-to( 1.73205, 5)));
+        @include should(expect( math-cot(30deg)), to( be-close-to( 1.73205, 5)));
+    }
+}
+
+// Inverse trigonometric functions
+@include describe("Function math-asin") {
+    @include it("should calculate the arcsine of a number") {
+        @include should(expect( math-asin(0.1)), to( be-close-to( 0.10017, 5)));
+        @include should(expect( math-asin(-1)), to( be-close-to( -1.5708, 5)));
+    }
+}
+
+@include describe("Function math-acos") {
+    @include it("should calculate the arccosine of a number") {
+        @include should(expect( math-acos(0.1)), to( be-close-to( 1.47063, 5)));
+        @include should(expect( math-acos(-1)), to( be-close-to( 3.14159, 5)));
+    }
+}
+
+@include describe("Function math-atan") {
+    @include it("should calculate the arctangent of a number") {
+        @include should(expect( math-atan(0.1)), to( be-close-to( 0.09967, 5)));
+        @include should(expect( math-atan(-1)), to( be-close-to( -0.7854, 5)));
+    }
+}
+
+//@include describe("Function atan2") {
+//    @include it("should calculate the arctangent of the quotient of its arguments") {
+//        @include should(expect( math-atan2( 0, 0)), to( equal( 0)));
+//        @include should(expect( math-atan2( 0, -0.0)), to( be-close-to( 3.14159, 5)));
+//        @include should(expect( math-atan2(-0.0, 0)), to( equal( 0)));
+//        @include should(expect( math-atan2(-0.0, -0.0)), to( be-close-to( -3.14159, 5)));
+//        @include should(expect( math-atan2( 0, 1)), to( equal( 0)));
+//        @include should(expect( math-atan2( 0, -1)), to( be-close-to( 3.14159, 5)));
+//    }
+//}
