@@ -1,0 +1,92 @@
+@import "bootcamp";
+
+$bc-setting-verbose:  true;
+$bc-setting-warnings: true;
+$bc-setting-raise-error: false !global;
+
+@function throwError( $msg: "This function is used to throw exit code 1" )
+{
+  @warn "#{$msg}";
+  @if not $bc-setting-raise-error
+  {
+      @return ERROR;
+  } 
+}
+
+@function json-encode($value) {
+	$type: type-of($value);
+
+	@if $type == 'map' {
+		@return _json-encode--map($value);
+	}
+	@else if $type == 'list' {
+		@return _json-encode--list($value);
+	}
+	@else if $type == 'true' {
+		@return _json-encode--true($value);
+	}
+	@else if $type == 'false' {
+		@return _json-encode--false($value);
+	}
+	@else if $type == 'string' {
+		@return _json-encode--string($value);
+	}
+	@else if $type == 'null' {
+		@return _json-encode--null($value);
+	}
+	@else if $type == 'number' {
+		@return _json-encode--number($value);
+	}
+
+	@warn "Unknown type for #{$value} (#{$type}).";
+  	@return false;
+}
+
+@mixin runner-end {
+
+  @if $bc-total == 0 {
+    $bc-stats: "No tests were found" !global;
+  }
+
+  Test Results {
+    Success: $bc-failed == 0;
+    Stats:   #{ $bc-stats   };
+    Tests:   #{ $bc-total   };
+    Asserts: #{ $bc-asserts };
+    Passed:  #{ $bc-passed  };
+    Failed:  #{ $bc-failed  };
+    Skipped: #{ $bc-skipped };
+
+    @if $bc-errors != () and $bc-setting-warnings {
+      @each $error in $bc-errors {
+        Error: #{$error};
+      }
+    }
+  }
+
+  @debug "
+
+  	Test Results
+
+  	Success: 		#{$bc-failed == 0}
+
+  	Stats: 			#{$bc-stats}
+
+  	Tests: 			#{$bc-total}
+
+  	Asserts: 		#{$bc-asserts}
+
+  	Passed: 		#{$bc-passed}
+
+  	Failed: 		#{$bc-failed}
+
+  	Skipped: 		#{$bc-skipped}
+
+  ";
+
+  @if( $bc-failed != 0 ){
+  	$error: throwError( "Test failed" );
+  }
+
+  /* << Bootcamp << */
+}

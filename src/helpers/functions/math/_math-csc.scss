@@ -1,0 +1,9 @@
+// Returns the cosecant of a number.
+// @param {Number} $x A number in rad or deg. Assuming unitless number to be in rad.
+// @example
+//     math-csc(1.0472) // 1.1547
+//     math-csc(60deg)  // 1.1547
+@function math-csc ($x) {
+    $x: unit-less-rad($x);
+    @return 1 / math-sin($x);
+}
