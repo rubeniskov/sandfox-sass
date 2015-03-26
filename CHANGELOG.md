@@ -1,5 +1,11 @@
 # Changelog
 
+## version : [`0.7.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.7.0)
+
+ - [update: base includes](https://github.com/foxnet-git/sandfox-sass/commit/ff93985659fe79fc2d4a50d8dfcc716002fcb9e6)
+ - [add: normalize apply normalized style for all browsers](https://github.com/foxnet-git/sandfox-sass/commit/732268c8b5f7a9a49336b84b66debcd07c35cf8f)
+ - [add: reset.scss with reset html browser default rules](https://github.com/foxnet-git/sandfox-sass/commit/6f1fc4916df0c28485e222a6d0b7bfb4cd0ef8dd)
+
 ## version : [`0.6.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.6.0)
 
  - [update: bdd unit test specs](https://github.com/foxnet-git/sandfox-sass/commit/b9c23d306ee9deff4bf794604b6c1cdf65be371f)
