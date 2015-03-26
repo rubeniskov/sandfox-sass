@@ -16,7 +16,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://foxnet-git@github.com/foxnet-git/sandfox-sass.git"
+        "url": "https://foxnet-git@github.com/foxnet-git/sandfox-sass.git",
+        "url_commit": "https://github.com/foxnet-git/sandfox-sass/commit",
+        "url_tag": "https://github.com/foxnet-git/sandfox-sass/releases/tag"
     },
     "author": {
         "name": "Rubén López Gómez",
