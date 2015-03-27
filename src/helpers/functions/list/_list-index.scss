@@ -1,0 +1,22 @@
+// Returns index of `$value` in `$list`.
+//
+// @param {List} $list  - list to search
+// @param {*}    $value - value to be searched for
+// @param {Bool} $last  - from list bottom
+//
+// @return {Number | Null}
+
+@function list-index($list, $value, $last: false) {
+
+	@if not $last {
+		@return index($list, $value);
+	}
+
+	@for $i from length($list) through 1 {
+	    @if nth($list, $i)==$value {
+	        @return $i;
+	    }
+	}
+
+	@return null;
+}

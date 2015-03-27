@@ -1,5 +1,31 @@
 # Changelog
 
+## version : [`0.8.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.8.0)
+
+ - [update: bdd unit test specs](https://github.com/foxnet-git/sandfox-sass/commit/dd6ee3ac072242ade50503fd87e9b12af205f530)
+ - [add: list functions to bdd unit test](https://github.com/foxnet-git/sandfox-sass/commit/6eb33ea5398dd314ca185957096f26e4df1a7d2f)
+ - [update: function includes list & utils](https://github.com/foxnet-git/sandfox-sass/commit/5d09c34ff942530090ce4cf752b3f4bda0756c1a)
+ - [add: list includes](https://github.com/foxnet-git/sandfox-sass/commit/534f8893d8e499715375a54c9d51ea554112a498)
+ - [add: utils includes](https://github.com/foxnet-git/sandfox-sass/commit/3761554147a0f741db0f407bd0385647148c5991)
+ - [add: is-empty function](https://github.com/foxnet-git/sandfox-sass/commit/7a2b3ac210eba42da8177f04a0848f50f3a59c54)
+ - [add: list-index function](https://github.com/foxnet-git/sandfox-sass/commit/8d843477efcf7a3fbf7404b63279f5c1dd7d1406)
+ - [add: list-after function](https://github.com/foxnet-git/sandfox-sass/commit/cb76510d3ef36244c9621f928cbb49e2299c783d)
+ - [add: list-before function](https://github.com/foxnet-git/sandfox-sass/commit/8a589a01f9f49459de94b3e5fb26d5f7ebd3db0a)
+ - [update: list-prepend comment](https://github.com/foxnet-git/sandfox-sass/commit/a9f53d3e6b44ccc3f4ec7ac977937f45fa0601e1)
+ - [add: list-append function](https://github.com/foxnet-git/sandfox-sass/commit/25cc083ce34e2aacce41274fcbcce20ed57cf98a)
+ - [add: list-prepend function](https://github.com/foxnet-git/sandfox-sass/commit/00220cb836ece6cc0f203c57b6a238ce2bb147cc)
+ - [add: list-first function](https://github.com/foxnet-git/sandfox-sass/commit/805cd54be7e2249f41886150cdb6642ef772169e)
+ - [add: list-last function](https://github.com/foxnet-git/sandfox-sass/commit/73fe21f898411e2a9ecc348ec59413fa547a8f26)
+ - [add: list-implode function](https://github.com/foxnet-git/sandfox-sass/commit/a792a111d7a8bef80396fcf66075ee36800e5b03)
+ - [add: list-explode function](https://github.com/foxnet-git/sandfox-sass/commit/61d1381bfc91e2cfd311730a1b078ee1a965f2d0)
+ - [update: remove comment break line on list-create](https://github.com/foxnet-git/sandfox-sass/commit/a8b664a9612b0a31f1a2248c6f6b6b50f3974c3c)
+ - [add: list-flatten function](https://github.com/foxnet-git/sandfox-sass/commit/46058ff73ddd44e653b8689d8b6beb465e3eab9c)
+ - [add: list-contain function](https://github.com/foxnet-git/sandfox-sass/commit/1276c2192e293878150bc75fb145098ddbc2359a)
+ - [add: list-create function](https://github.com/foxnet-git/sandfox-sass/commit/7496bef12d62eae6803ca7bec4565e205509d859)
+ - [add: list-reverse function](https://github.com/foxnet-git/sandfox-sass/commit/b13b083d89d87f03a327e4da8568030648621078)
+ - [add: list-switch function](https://github.com/foxnet-git/sandfox-sass/commit/56848d94760626f49bd647309f911dfd390e53cb)
+ - [add: list-insert function](https://github.com/foxnet-git/sandfox-sass/commit/30822ad0cefa2318cd04a8955fee68325e04e166)
+
 ## version : [`0.7.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.7.0)
 
  - [update: base includes](https://github.com/foxnet-git/sandfox-sass/commit/ff93985659fe79fc2d4a50d8dfcc716002fcb9e6)
