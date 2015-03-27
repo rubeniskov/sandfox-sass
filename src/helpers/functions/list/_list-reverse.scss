@@ -1,0 +1,19 @@
+// Reverses the order of `$list`.
+//
+// @param {List} $list - list to reverse
+//
+// @return {List}
+
+@function list-reverse($list) {
+    $length: length($list);
+    $end: floor($length / 2);
+    @if $length < 2 {
+        @return $list;
+    }
+    @for $i from 1 through $end {
+        $tmp: nth($list, $i);
+        $list: set-nth($list, $i, nth($list, -$i));
+        $list: set-nth($list, -$i, $tmp);
+    }
+    @return $list;
+}
