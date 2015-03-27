@@ -1,0 +1,27 @@
+// Power functions
+
+@include describe("Function list-implode") {
+	@include it("should convert list to string with default list glue") {
+		@include should(expect( list-implode( "a" "b" "c" ) ), to( equal( "a b c" )));
+		@include should(expect( list-implode( 1 2 3 ) ), to( equal( "1 2 3" )));
+		@include should(expect( list-implode( "a" "b" "c" 1 2 3 ) ), to( equal( "a b c 1 2 3" )));
+		@include should(expect( list-implode( null "a" null false null 'b' null 0 null "c" null 1 ) ), to( equal( "a false b 0 c 1" )));
+	}
+
+	@include it("should convert list to string with assigned glue") {
+		@include should(expect( list-implode( "a" "b" "c", "-" ) ), to( equal( "a-b-c" )));
+		@include should(expect( list-implode( "a" "b" "c", "" ) ), to( equal( "abc" )));
+	}
+}
+
+//@include describe("Function list-explode") {
+//	@include it("should convert string with default list glue") {
+//		@include should(expect( list-explode( "a b c" ) ), to( equal( "a" "b" "c" )));
+//	}
+//}
+
+@include describe("Function list-flatten") {
+	@include it("should flatten nested lists") {
+		@include should(expect( length( list-flatten( ( "a" "b" "c", 1 2 3 ) ) ) ), to( equal( length( ( "a" "b" "c" 1 2 3 ) ) )));
+	}
+}
