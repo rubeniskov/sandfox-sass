@@ -1,0 +1,9 @@
+// Returns the last value of `list`
+//
+// @param {List} $list                  - list to get the value
+// 
+// @return {*}
+
+@function list-last($list) {
+    @return nth($list, length($list));
+}

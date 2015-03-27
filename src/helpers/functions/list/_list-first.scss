@@ -1,0 +1,9 @@
+// Returns the first value of `list`
+//
+// @param {List} $list                  - list to get the value
+// 
+// @return {*}
+
+@function list-first($list) {
+    @return nth($list, 1);
+}
