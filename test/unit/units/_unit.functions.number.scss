@@ -1,0 +1,160 @@
+/*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ 
+
+Number Functions
+
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*/
+
+/* Constants */
+@include describe("Function number-contants") {
+    @include it("should equal to defined values") {
+    	@include should(expect($NUMBER_MAX), to(equal(9007199254740992)));
+        @include should(expect($NUMBER_MIN), to(equal(-9007199254740992)));
+        @include should(expect($NUMBER_ZERO), to(equal(0)));
+        @include should(expect($NUMBER_ZERO_NEGATIVE), to(equal(-0)));
+        @include should(expect($NUMBER_STRINGS), to(equal('0' '1' '2' '3' '4' '5' '6' '7' '8' '9')));
+        @include should(expect($NUMBER_VALUES), to(equal(0   1   2   3   4   5   6   7   8   9)));
+        @include should(expect($NUMBER_UNIT_STRINGS), to(equal('px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax')));
+        @include should(expect($NUMBER_UNIT_VALUES), to(equal(1px  1cm  1mm  1%  1ch  1pica  1in  1em  1rem  1pt  1pc  1ex  1vw  1vh  1vmin  1vmax)));
+    }
+}
+
+/* Casting */
+@include describe("Function number-cast") {
+    @include it("should cast the string to number") {
+        @include should(expect(number-cast("-1px")), to(equal(-1px)));
+        @include should(expect(number-cast("1em")), to(equal(1em)));
+        @include should(expect(number-cast("10ch")), to(equal(10ch)));
+        @include should(expect(number-cast("-15")), to(equal(-15)));
+        @include should(expect(number-cast("-1")), to(equal(-1)));
+        @include should(expect(number-cast("-0")), to(equal(-0)));
+        @include should(expect(number-cast("71.560")), to(equal(71.56)));
+        @include should(expect(number-cast("1puc")), to(be-falsy()));
+        @include should(expect(number-cast("str")), to(be-falsy()));
+    }
+}
+
+@include describe("Function number-rand") {
+    @include it("should return a random number with min and max values given") {
+        @include should(expect(number-rand(1, 2)), to(equal(1)));
+    }
+}
+
+/* Transform */
+@include describe("Function number-unit-angle") {
+    @include it("should get the number without unit") {
+        @include should(expect(number-unit-angle(60deg, "rad")), to(be-close-to(1.0471975512, 5)));
+        @include should(expect(number-unit-angle(1rad, "deg")), to(be-close-to(57.295779513, 5)));
+        @include should(expect(number-unit-angle(20turn, "grad")), to(be-close-to(8000, 5)));
+        @include should(expect(number-unit-angle(20grad, "deg")), to(be-close-to(18, 5)));
+    }
+}
+
+@include describe("Function number-unit") {
+    @include it("should get the unit without number") {
+        @include should(expect(number-unit(5px)), to(equal("px")));
+        @include should(expect(number-unit(5em)), to(equal("em")));
+        @include should(expect(number-unit(-5ch)), to(equal("ch")));
+    }
+}
+
+@include describe("Function number-unit-get") {
+    @include it("should get the unit without number") {
+        @include should(expect(number-unit(5px)), to(equal("px")));
+        @include should(expect(number-unit(5em)), to(equal("em")));
+        @include should(expect(number-unit(-5ch)), to(equal("ch")));
+    }
+}
+
+@include describe("Function number-unit-set") {
+    @include it("should get the unit without number") {
+        @include should(expect(number-unit(5px, "em")), to(equal(5em)));
+        @include should(expect(number-unit(5em, "px")), to(equal(5px)));
+        @include should(expect(number-unit(-5, "ch")), to(equal(-5ch)));
+    }
+}
+
+@include describe("Function number-unit-less") {
+    @include it("should get the number without unit") {
+        @include should(expect(number-unit-less(5px)), to(equal(5)));
+        @include should(expect(number-unit-less(5em)), to(equal(5)));
+        @include should(expect(number-unit-less(-5ch)), to(equal(-5)));
+    }
+}
+
+@include describe("Function number-between") {
+    @include it("should truncate the number with the defined min and max values") {
+        @include should(expect(number-between(5, 0, 10)), to(equal(5)));
+        @include should(expect(number-between(5, 0, 10)), to(equal(5)));
+        @include should(expect(number-between(20, 0, 10)), to(equal(10)));
+        @include should(expect(number-between(-20, 0, 10)), to(equal(0)));
+        @include should(expect(number-between(0, -10, 10)), to(equal(0)));
+        @include should(expect(number-between(10, -10)), to(equal(10)));
+    }
+    
+    @include it("should truncate the unit with the defined min and max values") {
+    	@include should(expect(number-between(1em, 0, 10em)), to(equal(1em)));
+    	@include should(expect(number-between(5px, -10px, 10px)), to(equal(5px)));
+    	@include should(expect(number-between(-15px, -10px, 10px)), to(equal(-10px)));
+    	@include should(expect(number-between(15px, -10px, 10px)), to(equal(10px)));
+    }
+
+    @include it("should truncate the number with the defined min value and max available value") {
+    	@include should(expect(number-between(-20, -10)), to(equal(-10)));
+    	@include should(expect(number-between(-20px, -15px)), to(equal(-15px)));
+    }	
+
+    @include it("should truncate the number with the defined max value and min available value") {
+    	@include should(expect(number-between(30, null, 20)), to(equal(20)));
+    	@include should(expect(number-between(30em, null, 25em)), to(equal(25em)));
+    }
+}
+
+/* Checking */
+@include describe("Function number-is-unit") {
+    @include it("should check if number has unit or not") {
+        @include should(expect(number-is-unit(1px)), to(be-truthy()));
+        @include should(expect(number-is-unit(1)), to(be-falsy()));
+    }
+}
+
+@include describe("Function number-is-even") {
+    @include it("should check if number is even or not") {
+        @include should(expect(number-is-even(0)), to(be-truthy()));
+        @include should(expect(number-is-even(1)), to(be-falsy()));
+        
+        @include should(expect(number-is-even(1.3)), to(be-falsy()));
+        @include should(expect(number-is-even(2.2)), to(be-falsy()));
+        @include should(expect(number-is-even(3.1)), to(be-falsy()));
+
+        @include should(expect(number-is-even(1)), to(be-falsy()));
+        @include should(expect(number-is-even(-2)), to(be-truthy()));
+        @include should(expect(number-is-even(-3)), to(be-falsy()));
+        @include should(expect(number-is-even(4)), to(be-truthy()));
+
+        @include should(expect(number-is-even(-1px)), to(be-falsy()));
+        @include should(expect(number-is-even(2em)), to(be-truthy()));
+        @include should(expect(number-is-even(3rem)), to(be-falsy()));
+        @include should(expect(number-is-even(-4ch)), to(be-truthy()));
+    }
+}
+
+@include describe("Function number-is-odd") {
+    @include it("should check if number is odd or not") {
+        @include should(expect(number-is-odd(0)), to(be-falsy()));
+        @include should(expect(number-is-odd(1)), to(be-truthy()));
+        
+        @include should(expect(number-is-odd(1.3)), to(be-truthy()));
+        @include should(expect(number-is-odd(2.2)), to(be-truthy()));
+        @include should(expect(number-is-odd(3.1)), to(be-truthy()));
+
+        @include should(expect(number-is-odd(1)), to(be-truthy()));
+        @include should(expect(number-is-odd(-2)), to(be-falsy()));
+        @include should(expect(number-is-odd(-3)), to(be-truthy()));
+        @include should(expect(number-is-odd(4)), to(be-falsy()));
+
+        @include should(expect(number-is-odd(-1px)), to(be-truthy()));
+        @include should(expect(number-is-odd(2em)), to(be-falsy()));
+        @include should(expect(number-is-odd(3rem)), to(be-truthy()));
+        @include should(expect(number-is-odd(-4ch)), to(be-falsy()));
+    }
+}

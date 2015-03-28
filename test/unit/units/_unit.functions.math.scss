@@ -41,7 +41,7 @@
     }
 }
 
-// Exponential function
+// Exponential
 @include describe("Function math-exp") {
     @include it("should calculate exponents of eulers constant") {
         @include should(expect( math-exp(1)), to( be-close-to( 2.71828, 5)));
@@ -59,7 +59,17 @@
     }
 }
 
-// Trigonometric functions
+// Euler Algoritms
+@include describe("Function math-erf") {
+    @include it("should calculate the natural logarithm of a number") {
+        @include should(expect( math-erf(1)), to( be-close-to( 0.69315, 5)));
+        @include should(expect( math-erf(2)), to( be-close-to( 2.30259, 5)));
+        @include should(expect( math-erf(3)), to( be-close-to( 2.30259, 5)));
+        @include should(expect( math-erf(10)), to( be-close-to( 2.30259, 5)));
+    }
+}
+
+// Trigonometric
 @include describe("Function math-sin") {
     @include it("should calculate the sine of a number") {
         @include should(expect( math-sin(1.0472)), to( be-close-to( 0.86603, 5)));
