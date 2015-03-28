@@ -1,0 +1,8 @@
+@function number-unit-less($number) {
+    @if not number-is-unit($number) {
+        @return $number;
+    }
+    @else {
+        @return $number / ($number * 0 + 1);
+    }
+}

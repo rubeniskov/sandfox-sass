@@ -1,0 +1,15 @@
+@function number-unit-set($number, $unit) {
+
+	@if number-is-unit($number) {
+		$number: number-unit-less($number);
+	}
+
+	$index: index($NUMBER_UNIT_STRINGS, $unit);
+  
+  	@if not $index {
+    	@warn "Unknown unit `#{$unit}`.";
+    	@return false;
+  	}
+  
+  	@return $number * nth($NUMBER_UNIT_VALUES, $index);
+}

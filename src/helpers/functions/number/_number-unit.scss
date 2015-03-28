@@ -1,0 +1,7 @@
+@function number-unit($number, $unit:null) {
+    @if $unit != null {
+       	@return number-unit-set($number, $unit);
+    }
+
+    @return number-unit-get( $number );
+}

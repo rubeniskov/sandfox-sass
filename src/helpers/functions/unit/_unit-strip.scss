@@ -1,8 +1,0 @@
-// Strip unit from a number
-@function unit-strip ($number) {
-    @if unitless($number) {
-        @return $number;
-    } @else {
-        @return $number / ($number * 0 + 1);
-    }
-}

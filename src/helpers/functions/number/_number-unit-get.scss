@@ -1,0 +1,7 @@
+@function number-unit-get($number) {
+	@if not number-is-unit($number) {
+       	@return false;
+    }
+
+    @return unit( $number );
+}

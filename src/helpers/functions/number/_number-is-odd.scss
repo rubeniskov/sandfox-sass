@@ -1,0 +1,4 @@
+@function number-is-odd($number) {
+	$number: number-unit-less($number);
+	@return $number % 2 != 0;
+}

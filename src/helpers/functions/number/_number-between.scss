@@ -1,0 +1,3 @@
+@function number-between($number, $min: null, $max: null) {
+	@return min($max or $NUMBER_MAX, max($min or $NUMBER_MIN, $number));
+}

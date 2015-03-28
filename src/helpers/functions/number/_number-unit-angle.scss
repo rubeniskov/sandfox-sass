@@ -1,0 +1,26 @@
+@function number-unit-angle($angle, $unit, $unit-less: false) {
+    @if unitless($angle) {
+        @return $angle;
+    }
+    $conversion_angle_factor: 1;
+    $input_angle_number: number-unit-less($angle);
+    $input_angle_unit: number-unit($angle);
+    $input_angle_unit_index: index($NUMBER_UNIT_ANGLE_STRINGS, $input_angle_unit);
+    $output_unit_index: index($NUMBER_UNIT_ANGLE_STRINGS, $unit);
+    @if not $input_angle_unit_index {
+        @warn "Unknown input angle unit `#{$angle_unit_index}`.";
+        @return false;
+    }
+    @if not $output_unit_index {
+        @warn "Unknown output angle unit `#{$angle_unit_index}`.";
+        @return false;
+    }
+    @if true {
+        // BUG LibSass angle conversion
+        $conversion_angle_factor: nth($NUMBER_UNIT_ANGLE_FACTORS, length($NUMBER_UNIT_ANGLE_STRINGS) * ( $input_angle_unit_index - 1) + $output_unit_index);
+    }
+    @else {
+        $conversion_angle_factor: nth($NUMBER_UNIT_ANGLE_VALUES, $input_angle_unit_index)/nth($NUMBER_UNIT_ANGLE_VALUES, $output_unit_index);
+    }
+    @return $input_angle_number * $conversion_angle_factor;
+}

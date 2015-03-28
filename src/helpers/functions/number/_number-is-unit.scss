@@ -1,0 +1,3 @@
+@function number-is-unit($number) {
+	@return unitless($number) == false;
+}
