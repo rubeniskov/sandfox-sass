@@ -1,5 +1,9 @@
 # Changelog
 
+## version : [`0.9.1`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.1)
+
+ - [fix: .travis.yml syntax error](https://github.com/foxnet-git/sandfox-sass/commit/2f8d5a2f36ba38d8b82758377e8aab6d57f29fcb)
+
 ## version : [`0.9.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.0)
 
  - [fix: conditional error syntax on math-rand](https://github.com/foxnet-git/sandfox-sass/commit/c724039334e639fb63fb849f9a6c4dee81c25deb)
