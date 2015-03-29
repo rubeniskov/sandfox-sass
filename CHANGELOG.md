@@ -1,5 +1,9 @@
 # Changelog
 
+## version : [`0.9.2`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.2)
+
+ - [fix: devDependecy grunt-sass change git source by tarball](https://github.com/foxnet-git/sandfox-sass/commit/92aeec5db8788ee8dd36c6f1dec9a76d02ce708e)
+
 ## version : [`0.9.1`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.1)
 
  - [fix: .travis.yml syntax error](https://github.com/foxnet-git/sandfox-sass/commit/2f8d5a2f36ba38d8b82758377e8aab6d57f29fcb)
