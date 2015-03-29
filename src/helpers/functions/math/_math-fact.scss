@@ -1,9 +1,13 @@
-// Returns the factorial of a non-negative integer.
-// @param {Number} $x A non-negative integer.
+// Returns the factorial of `$x` and must be a non-negative integer.
+//
+// @param {Number} $x                   - A non-negative integer.
+//
 // @return {Number}
+//
 // @example
-//     math-fact(0) // 1
-//     math-fact(8) // 40320
+//     math-fact(0)                     // 1
+//     math-fact(8)                     // 40320
+
 @function math-fact ($x) {
     @if $x < 0 or  $x != floor($x) {
         @warn "Argument for `math-fact()` must be a positive integer.";
