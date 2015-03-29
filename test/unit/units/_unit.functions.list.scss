@@ -1,197 +1,179 @@
-// Construction
+/*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ 
+
+List Functions
+
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*/
+
+/* Construction */
 @include describe("Function list-create") {
-	@include it("should create a new empty list") {
-    	@include should(expect(list-create(comma)), to(have-length-of(0)));
-    	@include should(expect(list-create(space)), to(have-length-of(0)));
-	}
+    @include it("should create a new empty list") {
+        @include should(expect(list-create(comma)), to(have-length-of(0)));
+        @include should(expect(list-create(space)), to(have-length-of(0)));
+    }
 }
 
-// Traversing
+/* Traversing */
 @include describe("Function list-index") {
-	@include it("should return index value of list") {
-		
-    	@include should(expect(list-index("a" "b" "c", "a" )), to(equal(1)));
-    	@include should(expect(list-index("a" "b" "c", "b" )), to(equal(2)));
-    	@include should(expect(list-index("a" "b" "c", "c" )), to(equal(3)));
-    	@include should(expect(list-index("a" "b" "c", "d" )), to(be-null()));
-	}
-
-	@include it("should return last index value of list") {
-		
-    	@include should(expect(list-index("a" "b" "c", "a", true )), to(equal(1)));
-    	@include should(expect(list-index("a" "b" "c", "b", true )), to(equal(2)));
-    	@include should(expect(list-index("a" "b" "c", "c", true )), to(equal(3)));
-    	@include should(expect(list-index("a" "b" "c", "d", true )), to(be-null()));
-	}
+    @include it("should return index value of list") {
+        @include should(expect(list-index("a" "b" "c", "a")), to(equal(1)));
+        @include should(expect(list-index("a" "b" "c", "b")), to(equal(2)));
+        @include should(expect(list-index("a" "b" "c", "c")), to(equal(3)));
+        @include should(expect(list-index("a" "b" "c", "d")), to(be-null()));
+    }
+    @include it("should return last index value of list") {
+        @include should(expect(list-index("a" "b" "c", "a", true)), to(equal(1)));
+        @include should(expect(list-index("a" "b" "c", "b", true)), to(equal(2)));
+        @include should(expect(list-index("a" "b" "c", "c", true)), to(equal(3)));
+        @include should(expect(list-index("a" "b" "c", "d", true)), to(be-null()));
+    }
 }
 
 @include describe("Function list-first") {
-	@include it("should return index value of list") {
-		
-    	@include should(expect(list-first("a" "b" "c" "d" )), to(equal("a")));
-	}
+    @include it("should return first value of list") {
+        @include should(expect(list-first("a" "b" "c" "d")), to(equal("a")));
+    }
+}
+
+@include describe("Function list-last") {
+    @include it("should return last value of list") {
+        @include should(expect(list-last("a" "b" "c" "d")), to(equal("d")));
+    }
 }
 
 @include describe("Function list-contain") {
-	@include it("should return index value of list") {
-		
-    	@include should(expect(list-contain("a" "b" "c" "d", "a" )), to(be-truthy()));
-	}
+    @include it("should return index value of list") {
+        @include should(expect(list-contain("a" "b" "c" "d", "a")), to(be-truthy()));
+    }
 }
 
-// Manipulation
+/* Manipulation */
 @include describe("Function list-insert") {
-	@include it("should add value to list at index parameter") {
-		
-		$ret: list-insert("a" "c" "d", "b", 2 );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 2)), to(equal("b")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
-
-	@include it("should add value to list at negative index parameter from length") {
-		
-		$ret: list-insert("a" "c" "d", "b", -2 );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 2)), to(equal("b")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
-
-	@include it("should add values to list with flatten") {
-		
-		$ret: list-flatten(list-insert("a" "d", "b" "c", 2 ));
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 2)), to(equal("b")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
+    @include it("should add value to list at index parameter") {
+        $ret: list-insert("a" "c" "d", "b", 2);
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 2)), to(equal("b")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
+    @include it("should add value to list at negative index parameter from length") {
+        $ret: list-insert("a" "c" "d", "b", -2);
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 2)), to(equal("b")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
+    @include it("should add values to list with flatten") {
+        $ret: list-flatten(list-insert("a" "d", "b" "c", 2));
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 2)), to(equal("b")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
 }
 
 @include describe("Function list-append") {
-	@include it("should add value to list from bottom") {
-		
-		$ret: list-append("a" "b" "c", "d" );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 4)), to(equal("d")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
+    @include it("should add value to list from bottom") {
+        $ret: list-append("a" "b" "c", "d");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 4)), to(equal("d")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
 }
 
 @include describe("Function list-prepend") {
-	@include it("should add value to list from top") {
-		
-		$ret: list-prepend("b" "c" "d", "a");
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 1)), to(equal("a")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
+    @include it("should add value to list from top") {
+        $ret: list-prepend("b" "c" "d", "a");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 1)), to(equal("a")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
 }
 
 @include describe("Function list-before") {
-	@include it("should add value to list from top") {
-		
-		$ret: list-before("b" "c" "d", "a" );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 1)), to(equal("a")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
-
-	@include it("should add value to list before search value") {
-		
-		$ret: list-before("a" "c" "d", "b", "c" );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 1)), to(equal("a")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
+    @include it("should add value to list from top") {
+        $ret: list-before("b" "c" "d", "a");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 1)), to(equal("a")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
+    @include it("should add value to list before search value") {
+        $ret: list-before("a" "c" "d", "b", "c");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 1)), to(equal("a")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
 }
 
 @include describe("Function list-after") {
-	@include it("should add value to list from top") {
-		
-		$ret: list-after("a" "b" "c", "d" );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 1)), to(equal("a")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
-
-	@include it("should add value to list before search value") {
-		
-		$ret: list-after("a" "b" "d", "c", "b" );
-
-    	@include should(expect($ret), to(contain("d" )));
-    	@include should(expect($ret), to(contain("a")));
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 3)), to(equal("c")));
-	}
+    @include it("should add value to list from top") {
+        $ret: list-after("a" "b" "c", "d");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 1)), to(equal("a")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
+    @include it("should add value to list before search value") {
+        $ret: list-after("a" "b" "d", "c", "b");
+        @include should(expect($ret), to(contain("d")));
+        @include should(expect($ret), to(contain("a")));
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 3)), to(equal("c")));
+    }
 }
 
-// Transform
+/* Transform */
 @include describe("Function list-implode") {
-	@include it("should convert list to string with default list glue") {
-		@include should(expect( list-implode( "a" "b" "c" ) ), to( equal( "a b c" )));
-		@include should(expect( list-implode( 1 2 3 ) ), to( equal( "1 2 3" )));
-		@include should(expect( list-implode( "a" "b" "c" 1 2 3 ) ), to( equal( "a b c 1 2 3" )));
-		@include should(expect( list-implode( null "a" null false null 'b' null 0 null "c" null 1 ) ), to( equal( "a false b 0 c 1" )));
-	}
-
-	@include it("should convert list to string with assigned glue by parameter") {
-		@include should(expect( list-implode( "a" "b" "c", "-" ) ), to( equal( "a-b-c" )));
-		@include should(expect( list-implode( "a" "b" "c", "" ) ), to( equal( "abc" )));
-	}
+    @include it("should convert list to string with default list glue") {
+        @include should(expect(list-implode("a" "b" "c")), to(equal("a b c")));
+        @include should(expect(list-implode(1 2 3)), to(equal("1 2 3")));
+        @include should(expect(list-implode("a" "b" "c" 1 2 3)), to(equal("a b c 1 2 3")));
+        @include should(expect(list-implode(null "a" null false null 'b' null 0 null "c" null 1)), to(equal("a false b 0 c 1")));
+    }
+    @include it("should convert list to string with assigned glue by parameter") {
+        @include should(expect(list-implode("a" "b" "c", "-")), to(equal("a-b-c")));
+        @include should(expect(list-implode("a" "b" "c", "")), to(equal("abc")));
+    }
 }
 
 @include describe("Function list-explode") {
-	@include it("should convert string to lis with default glue or assigned by parameter") {
-		@include should(expect( list-explode( "abc" )), to( equal( "a" "b" "c" )));
-		@include should(expect( list-explode( "a-b-c", "-" )), to( equal( "a" "b" "c" )));
-		@include should(expect( list-explode( "a--b--c", "--", comma )), to( equal( ("a", "b", "c"))));
-	}
+    @include it("should convert string to lis with default glue or assigned by parameter") {
+        @include should(expect(list-explode("abc")), to(equal("a" "b" "c")));
+        @include should(expect(list-explode("a-b-c", "-")), to(equal("a" "b" "c")));
+        @include should(expect(list-explode("a--b--c", "--", comma)), to(equal(("a", "b", "c"))));
+    }
 }
 
 @include describe("Function list-flatten") {
-	@include it("should flatten nested lists to single list") {
-		@include should(expect(list-flatten(("a" "b" "c", 1 (2, 3)))), to(have-length-of(6)));
-	}
+    @include it("should flatten nested lists to single list") {
+        @include should(expect(list-flatten(("a" "b" "c", 1 (2, 3)))), to(have-length-of(6)));
+    }
 }
 
 @include describe("Function list-reverse") {
-	@include it("should make a reversed list") {
-
-		$ret: list-reverse("d" "c" "b" "a");
-
-    	@include should(expect($ret), to(have-length-of(4)));
-    	@include should(expect(nth($ret, 1)), to(equal("a")));
-    	@include should(expect(nth($ret, 4)), to(equal("d")));
-    	@include should(expect($ret), to(equal("a" "b" "c" "d")));
-	}
+    @include it("should make a reversed list") {
+        $ret: list-reverse("d" "c" "b" "a");
+        @include should(expect($ret), to(have-length-of(4)));
+        @include should(expect(nth($ret, 1)), to(equal("a")));
+        @include should(expect(nth($ret, 4)), to(equal("d")));
+        @include should(expect($ret), to(equal("a" "b" "c" "d")));
+    }
 }
 
 @include describe("Function list-switch") {
-	@include it("should switch list separator") {
-    	@include should(expect(list-switch(("a" "b"))), to(equal(("a","b"))));
-    	@include should(expect(list-switch(("a","b"))), to(equal(("a" "b"))));
-	}
+    @include it("should switch list separator") {
+        @include should(expect(list-switch(("a" "b"))), to(equal(("a", "b"))));
+        @include should(expect(list-switch(("a", "b"))), to(equal(("a" "b"))));
+    }
 }
