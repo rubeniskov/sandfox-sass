@@ -1,11 +1,15 @@
 // Adds `$value` at `$index` in `$list`.
 //
-// @param {List}    $list       - list to update
-// @param {*}       $value      - value to add
-// @param {Number}  $index      - index to add
-// @param {String}  $separator  - list separator
+// @param {List}    $list               - list to update
+// @param {*}       $value              - value to add
+// @param {Number}  $index              - index to add
+// @param {String}  $separator          - list separator
 //
 // @return {List | Null}
+//
+// @example
+//     list-insert("a" "b" "c", "d")        // ("a" "b" "c" "d")
+//     list-insert("a" "c", "d", "b", 2)    // ("a" "b" "c" "d")
 
 @function list-insert($list, $value, $index: null, $separator:null) {
 

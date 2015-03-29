@@ -1,5 +1,32 @@
 # Changelog
 
+## version : [`0.9.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.0)
+
+ - [fix: conditional error syntax on math-rand](https://github.com/foxnet-git/sandfox-sass/commit/c724039334e639fb63fb849f9a6c4dee81c25deb)
+ - [add: test/unit.report.css](https://github.com/foxnet-git/sandfox-sass/commit/6bf212fa6e0ec217938304f29a4db08703b0d6cb)
+ - [update: travis testing, added compass bdd](https://github.com/foxnet-git/sandfox-sass/commit/8416991ccbbcf40e8d42a1bda3ec5b60971e13f7)
+ - [add: compass config for ci-testing](https://github.com/foxnet-git/sandfox-sass/commit/c6f8534a43849933c7f7b8a43cec21a9f7e86ed6)
+ - [update: Gruntfile.js and package.json added timing grunt-tasks](https://github.com/foxnet-git/sandfox-sass/commit/3e3601a92ae441b21f2971812e74534f3d66733b)
+ - [update: number includer functions added number-rand](https://github.com/foxnet-git/sandfox-sass/commit/7153026fa11f9019ad148d2f4c2c280d1ddd8d0b)
+ - [update: added comment blocks to number functions](https://github.com/foxnet-git/sandfox-sass/commit/198421df05794a2b8097cd7295c1d14c025ce24e)
+ - [update: unit bdd number functions specs](https://github.com/foxnet-git/sandfox-sass/commit/f36c25e159dcb6d0b94f1aa87c02de4cc797516c)
+ - [update: unit bdd list functions specs](https://github.com/foxnet-git/sandfox-sass/commit/7f55a1006dac93eb62b1f09cb99e47f68fb92591)
+ - [update: math-erfc fix space on block comment examples](https://github.com/foxnet-git/sandfox-sass/commit/66b5bae6b17aa8050ebb365e73157c5dd04f0564)
+ - [update: clean spaces and tabs on list includer](https://github.com/foxnet-git/sandfox-sass/commit/3822712c0104dfcefe3e2eae1506e6195c07375a)
+ - [update: list functions block comments added examples](https://github.com/foxnet-git/sandfox-sass/commit/a095772a88c44cd40cc583a12976652880a3bba3)
+ - [update: math function includes](https://github.com/foxnet-git/sandfox-sass/commit/7eb784d21f86d6ea28b0f4e7e3c5337259d97561)
+ - [add: math-gcd function](https://github.com/foxnet-git/sandfox-sass/commit/49b0fd15b02939f1c7cdef703633e8f3ba3bc748)
+ - [add: math-erfc function](https://github.com/foxnet-git/sandfox-sass/commit/f91aaa82832ae851784c9b583b1ee60586497fe2)
+ - [add: math-erf function](https://github.com/foxnet-git/sandfox-sass/commit/de9be4a8b72a0c85970eefdd70ff2f84653bb179)
+ - [add: math-abs function](https://github.com/foxnet-git/sandfox-sass/commit/f8db2678186a248dc1f558d2dc2764365f1b2b9d)
+ - [update: math functions cleaning block comments](https://github.com/foxnet-git/sandfox-sass/commit/16d6b75a193f48c9e2d16a1f5fd63cb01ba3a6a8)
+ - [update: bdd unit math functions added maclaurin spec](https://github.com/foxnet-git/sandfox-sass/commit/5b2ac3fe9c30f2c66105442c524595d9753785e6)
+ - [update: bdd unit math functions specs](https://github.com/foxnet-git/sandfox-sass/commit/eab3057bcc4ccb0a08eec9f1c73f15eb2b7a5da5)
+ - [update: include number functions](https://github.com/foxnet-git/sandfox-sass/commit/32bc861443888326c3f3c01a15395caf820a4cc8)
+ - [update: include number unit spec](https://github.com/foxnet-git/sandfox-sass/commit/91bdbae22c4cf750d213f2dbdd678671192f35df)
+ - [update: remove unit functions and moved to number functions](https://github.com/foxnet-git/sandfox-sass/commit/730a4d5a25f4f63f6c112889539d4478a65b48d0)
+ - [update: refactory name files to allow compass compilation](https://github.com/foxnet-git/sandfox-sass/commit/d9b0666a61ccf2fd847e63c48aa23ec506b7df58)
+
 ## version : [`0.8.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.8.0)
 
  - [update: bdd unit test specs](https://github.com/foxnet-git/sandfox-sass/commit/dd6ee3ac072242ade50503fd87e9b12af205f530)

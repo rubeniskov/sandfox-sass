@@ -1,7 +1,10 @@
-// Returns a two-element list containing the normalized fraction and exponent of number.
+// Returns a two-element list containing the normalized fraction and exponent of `$x`.
+//
 // @param {Number} $x
+//
 // @return {List} fraction, exponent
-@function math-frexp ($x) {
+
+@function math-frexp($x) {
     $exp: 0;
     @if $x < 0 {
         $x: $x * -1;

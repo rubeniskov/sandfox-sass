@@ -4,6 +4,10 @@
 // @param {String} $glue     			- string to use as glue
 //
 // @return {List | Null}
+//
+// @example
+//     list-implode("a" "b" "c")        // "abc"
+//     list-implode("a" "b" "c", "--")  // "a--b--c"
 
 @function list-implode( $list, $glue: null ) {
     $result: null;

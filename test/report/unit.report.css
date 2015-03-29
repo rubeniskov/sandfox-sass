@@ -1,0 +1,452 @@
+@charset "UTF-8";
+/*! sassyjson - v1.1.8 - 2014-06-01 */
+/*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ 
+
+Number Functions
+
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*/
+/* Constants */
+Function number-contants should equal to defined values {
+   ✔: Expected 9007199254740992 to equal 9007199254740992;
+   ✔: Expected -9007199254740992 to equal -9007199254740992;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] to equal [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+   ✔: Expected [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] to equal [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+   ✔: Expected [px, cm, mm, %, ch, pica, in, em, rem, pt, pc, ex, vw, vh, vmin, vmax] to equal [px, cm, mm, %, ch, pica, in, em, rem, pt, pc, ex, vw, vh, vmin, vmax];
+   ✔: Expected [1px, 1cm, 1mm, 1%, 1ch, 1pica, 1in, 1em, 1rem, 1pt, 1pc, 1ex, 1vw, 1vh, 1vmin, 1vmax] to equal [1px, 1cm, 1mm, 1%, 1ch, 1pica, 1in, 1em, 1rem, 1pt, 1pc, 1ex, 1vw, 1vh, 1vmin, 1vmax];
+  Test: Passed; }
+
+/* Casting */
+Function number-cast should cast the string to number {
+   ✔: Expected -1px to equal -1px;
+   ✔: Expected 1em to equal 1em;
+   ✔: Expected 10ch to equal 10ch;
+   ✔: Expected -15 to equal -15;
+   ✔: Expected -1 to equal -1;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 71.56 to equal 71.56;
+   ✔: Expected false to be falsy;
+   ✔: Expected false to be falsy;
+  Test: Passed; }
+
+Function number-rand should return a random number with min and max values given {
+   ✔: Expected 2 to be greater than 0;
+   ✔: Expected 2 to be less than 10;
+  Test: Passed; }
+
+/* Transform */
+Function number-unit-angle should get the number without unit {
+   ✔: Expected 1.0472rad to be close to 1.0471975512;
+   ✔: Expected 57.29578deg to be close to 57.295779513;
+   ✔: Expected 8000grad to be close to 8000;
+   ✔: Expected 18deg to be close to 18;
+  Test: Passed; }
+
+Function number-unit should get the unit without number {
+   ✔: Expected px to equal px;
+   ✔: Expected em to equal em;
+   ✔: Expected ch to equal ch;
+  Test: Passed; }
+
+Function number-unit-get should get the unit without number {
+   ✔: Expected px to equal px;
+   ✔: Expected em to equal em;
+   ✔: Expected ch to equal ch;
+  Test: Passed; }
+
+Function number-unit-set should get the unit without number {
+   ✔: Expected 5em to equal 5em;
+   ✔: Expected 5px to equal 5px;
+   ✔: Expected -5ch to equal -5ch;
+  Test: Passed; }
+
+Function number-unit-less should get the number without unit {
+   ✔: Expected 5 to equal 5;
+   ✔: Expected 5 to equal 5;
+   ✔: Expected -5 to equal -5;
+  Test: Passed; }
+
+Function number-between should truncate the number with the defined min and max values {
+   ✔: Expected 5 to equal 5;
+   ✔: Expected 5 to equal 5;
+   ✔: Expected 10 to equal 10;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 10 to equal 10;
+  Test: Passed; }
+
+Function number-between should truncate the unit with the defined min and max values {
+   ✔: Expected 1em to equal 1em;
+   ✔: Expected 5px to equal 5px;
+   ✔: Expected -10px to equal -10px;
+   ✔: Expected 10px to equal 10px;
+  Test: Passed; }
+
+Function number-between should truncate the number with the defined min value and max available value {
+   ✔: Expected -10 to equal -10;
+   ✔: Expected -15px to equal -15px;
+  Test: Passed; }
+
+Function number-between should truncate the number with the defined max value and min available value {
+   ✔: Expected 20 to equal 20;
+   ✔: Expected 25em to equal 25em;
+  Test: Passed; }
+
+/* Checking */
+Function number-is-unit should check if number has unit or not {
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+  Test: Passed; }
+
+Function number-is-even should check if number is even or not {
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected false to be falsy;
+   ✔: Expected false to be falsy;
+   ✔: Expected false to be falsy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+  Test: Passed; }
+
+Function number-is-odd should check if number is odd or not {
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected true to be truthy;
+   ✔: Expected true to be truthy;
+   ✔: Expected true to be truthy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+   ✔: Expected true to be truthy;
+   ✔: Expected false to be falsy;
+  Test: Passed; }
+
+/*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ 
+
+List Functions
+
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*/
+/* Construction */
+Function list-create should create a new empty list {
+   ✔: Expected [] to have length of 0;
+   ✔: Expected [] to have length of 0;
+  Test: Passed; }
+
+/* Traversing */
+Function list-index should return index value of list {
+   ✔: Expected 1 to equal 1;
+   ✔: Expected 2 to equal 2;
+   ✔: Expected 3 to equal 3;
+   ✔: Expected null to be null;
+  Test: Passed; }
+
+Function list-index should return last index value of list {
+   ✔: Expected 1 to equal 1;
+   ✔: Expected 2 to equal 2;
+   ✔: Expected 3 to equal 3;
+   ✔: Expected null to be null;
+  Test: Passed; }
+
+Function list-first should return first value of list {
+   ✔: Expected a to equal a;
+  Test: Passed; }
+
+Function list-last should return last value of list {
+   ✔: Expected d to equal d;
+  Test: Passed; }
+
+Function list-contain should return index value of list {
+   ✔: Expected true to be truthy;
+  Test: Passed; }
+
+/* Manipulation */
+Function list-insert should add value to list at index parameter {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected b to equal b;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-insert should add value to list at negative index parameter from length {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected b to equal b;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-insert should add values to list with flatten {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected b to equal b;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-append should add value to list from bottom {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected d to equal d;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-prepend should add value to list from top {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected a to equal a;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-before should add value to list from top {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected a to equal a;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-before should add value to list before search value {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected a to equal a;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-after should add value to list from top {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected a to equal a;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-after should add value to list before search value {
+   ✔: Expected [a, b, c, d] to deep contain d;
+   ✔: Expected [a, b, c, d] to deep contain a;
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected c to equal c;
+  Test: Passed; }
+
+/* Transform */
+Function list-implode should convert list to string with default list glue {
+   ✔: Expected a b c to equal a b c;
+   ✔: Expected 1 2 3 to equal 1 2 3;
+   ✔: Expected a b c 1 2 3 to equal a b c 1 2 3;
+   ✔: Expected a false b 0 c 1 to equal a false b 0 c 1;
+  Test: Passed; }
+
+Function list-implode should convert list to string with assigned glue by parameter {
+   ✔: Expected a-b-c to equal a-b-c;
+   ✔: Expected abc to equal abc;
+  Test: Passed; }
+
+Function list-explode should convert string to lis with default glue or assigned by parameter {
+   ✔: Expected [a, b, c] to equal [a, b, c];
+   ✔: Expected [a, b, c] to equal [a, b, c];
+   ✔: Expected [a, b, c] to equal [a, b, c];
+  Test: Passed; }
+
+Function list-flatten should flatten nested lists to single list {
+   ✔: Expected [a, b, c, 1, 2, 3] to have length of 6;
+  Test: Passed; }
+
+Function list-reverse should make a reversed list {
+   ✔: Expected [a, b, c, d] to have length of 4;
+   ✔: Expected a to equal a;
+   ✔: Expected d to equal d;
+   ✔: Expected [a, b, c, d] to equal [a, b, c, d];
+  Test: Passed; }
+
+Function list-switch should switch list separator {
+   ✔: Expected [a, b] to equal [a, b];
+   ✔: Expected [a, b] to equal [a, b];
+  Test: Passed; }
+
+/*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ 
+
+Math Functions
+
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*/
+/* Constants */
+Function math-contants should equal to defined values {
+   ✔: Expected 2.7182818285 to be close to 2.7182818285;
+   ✔: Expected 3.1415926536 to be close to 3.1415926536;
+   ✔: Expected 0.6931471806 to be close to 0.6931471806;
+   ✔: Expected 2.302585093 to be close to 2.302585093;
+   ✔: Expected 1.4426950409 to be close to 1.4426950409;
+   ✔: Expected 0.4342944819 to be close to 0.4342944819;
+   ✔: Expected 0.7071067812 to be close to 0.7071067812;
+   ✔: Expected 1.4142135624 to be close to 1.4142135624;
+  Test: Passed; }
+
+/* Factorial */
+Function math-fact should calculate factorials {
+   ✔: Expected 1 to equal 1;
+   ✔: Expected 40320 to equal 40320;
+  Test: Passed; }
+
+/* Power functions */
+Function math-pow should calculate exponents {
+   ✔: Expected 16 to equal 16;
+  Test: Passed; }
+
+Function math-pow should calculate negative exponents {
+   ✔: Expected 0.0625 to equal 0.0625;
+  Test: Passed; }
+
+Function math-pow should calculate decimal exponents {
+   ✔: Expected 1.3195079108 to be close to 1.31951;
+  Test: Passed; }
+
+/* Square root */
+Function math-sqrt should calculate square roots {
+   ✔: Expected 1.4142135624 to be close to 1.41421;
+   ✔: Expected 2.2360679775 to be close to 2.23607;
+  Test: Passed; }
+
+/* Exponential */
+Function math-exp should calculate exponents of eulers constant {
+   ✔: Expected 2.7182818285 to be close to 2.71828;
+  Test: Passed; }
+
+Function math-exp should calculate negative exponents of eulers constant {
+   ✔: Expected 0.3678794412 to be close to 0.36788;
+  Test: Passed; }
+
+/* Logarithms */
+Function math-log should calculate the natural logarithm of a number {
+   ✔: Expected 0.6931471806 to be close to 0.69315;
+   ✔: Expected 2.302585093 to be close to 2.30259;
+  Test: Passed; }
+
+/* Euclidean algorithm */
+Function math-gcd should calculate the error function of a number {
+   ✔: Expected 2 to equal 2;
+   ✔: Expected 10 to equal 10;
+   ✔: Expected 40 to equal 40;
+   ✔: Expected 1 to equal 1;
+   ✔: Expected 30 to equal 30;
+  Test: Passed; }
+
+/* Polynomial approximation */
+Function math-maclaurin should calculate the error function of a number {
+   ✔: Expected 0.9999997265 to be close to 0.9999997265;
+   ✔: Expected 1.9997261793 to be close to 1.9997261793;
+   ✔: Expected 2.9847842891 to be close to 2.9847842891;
+  Test: Passed; }
+
+/* Polynomial approximation */
+Function math-erf should calculate the error function of a number {
+   ✔: Expected -1 to equal -1;
+   ✔: Expected -0.9999779095 to be close to -0.9999779;
+   ✔: Expected -0.995322265 to be close to -0.9953223;
+   ✔: Expected -0.8427007929 to be close to -0.8427008;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 0.8427007929 to be close to 0.8427008;
+   ✔: Expected 0.995322265 to be close to 0.9953223;
+   ✔: Expected 0.9999779095 to be close to 0.9999779;
+   ✔: Expected 1 to equal 1;
+  Test: Passed; }
+
+/* Error Functions */
+Function math-erf should calculate the error function of a number {
+   ✔: Expected -1 to equal -1;
+   ✔: Expected -0.9999779095 to be close to -0.9999779;
+   ✔: Expected -0.995322265 to be close to -0.9953223;
+   ✔: Expected -0.8427007929 to be close to -0.8427008;
+   ✔: Expected 0 to equal 0;
+   ✔: Expected 0.8427007929 to be close to 0.8427008;
+   ✔: Expected 0.995322265 to be close to 0.9953223;
+   ✔: Expected 0.9999779095 to be close to 0.9999779;
+   ✔: Expected 1 to equal 1;
+  Test: Passed; }
+
+Function math-erfc should calculate the inverse error function of a number {
+   ✔: Expected 2 to equal 2;
+   ✔: Expected 1.9999779095 to be close to 1.999978;
+   ✔: Expected 1.995322265 to be close to 1.995322;
+   ✔: Expected 1.8427007929 to be close to 1.842701;
+   ✔: Expected 1 to equal 1;
+   ✔: Expected 0.1572992071 to be close to 0.1572992;
+   ✔: Expected 0.004677735 to be close to 0.004677735;
+   ✔: Expected 0.0000220905 to be close to 0.0000220905;
+   ✔: Expected 0 to equal 0;
+  Test: Passed; }
+
+/* Trigonometric */
+Function math-sin should calculate the sine of a number {
+   ✔: Expected 0.8660266282 to be close to 0.86603;
+   ✔: Expected 0.8660254038 to be close to 0.86603;
+   ✔: Expected 0 to be close to 0;
+   ✔: Expected 1 to be close to 1;
+   ✔: Expected 0.0 to be close to 0;
+   ✔: Expected -1 to be close to -1;
+  Test: Passed; }
+
+Function math-cos should calculate the cosine of a number {
+   ✔: Expected 0.7071054825 to be close to 0.70711;
+   ✔: Expected 0.7071067812 to be close to 0.70711;
+   ✔: Expected 1 to be close to 1;
+   ✔: Expected 0.0 to be close to 0;
+   ✔: Expected -1 to be close to -1;
+   ✔: Expected 0.0 to be close to 0;
+  Test: Passed; }
+
+Function math-tan should calculate the tangent of a number {
+   ✔: Expected 0.5773519017 to be close to 0.57735;
+   ✔: Expected 0.5773502692 to be close to 0.57735;
+  Test: Passed; }
+
+Function math-csc should calculate the cosecant of a number {
+   ✔: Expected 1.1546989058 to be close to 1.1547;
+   ✔: Expected 1.1547005384 to be close to 1.1547;
+  Test: Passed; }
+
+Function math-sec should calculate the secant of a number {
+   ✔: Expected 1.4142161597 to be close to 1.41422;
+   ✔: Expected 1.4142135624 to be close to 1.41422;
+  Test: Passed; }
+
+Function math-cot should calculate the cotangent of a number {
+   ✔: Expected 1.73204591 to be close to 1.73205;
+   ✔: Expected 1.7320508076 to be close to 1.73205;
+  Test: Passed; }
+
+/* Inverse trigonometric functions */
+Function math-asin should calculate the arcsine of a number {
+   ✔: Expected 0.1001674212 to be close to 0.10017;
+   ✔: Expected -1.5707963268 to be close to -1.5708;
+  Test: Passed; }
+
+Function math-acos should calculate the arccosine of a number {
+   ✔: Expected 1.4706289056 to be close to 1.47063;
+   ✔: Expected 3.1415926536 to be close to 3.14159;
+  Test: Passed; }
+
+Function math-atan should calculate the arctangent of a number {
+   ✔: Expected 0.0996686525 to be close to 0.09967;
+   ✔: Expected -0.7853981634 to be close to -0.7854;
+  Test: Passed; }
+
+Test Results {
+  Success: true;
+  Stats:  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔;
+  Tests: 59;
+  Asserts: 230;
+  Passed: 59;
+  Failed: 0;
+  Skipped: 0; }

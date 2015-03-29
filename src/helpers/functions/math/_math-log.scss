@@ -1,9 +1,14 @@
-// Returns the natural logarithm of a number.
+// Returns the natural logarithm of `$x`.
+//
 // @param {Number} $x
+//
+// @return {Number}
+//
 // @example
-//     math-log(2)  // 0.69315
-//     math-log(10) // 2.30259
-@function math-log ($x) {
+//     math-log(2)                      // 0.69315
+//     math-log(10)                     // 2.30259
+
+@function math-log($x) {
     @if $x <= 0 {
         @return 0 / 0;
     }
