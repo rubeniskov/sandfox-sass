@@ -35,7 +35,10 @@ Number Functions
 
 @include describe("Function number-rand") {
     @include it("should return a random number with min and max values given") {
-        @include should(expect(number-rand(1, 2)), to(equal(1)));
+        $rand: number-rand(0, 10);
+
+        @include should(expect($rand), to(be-greater-than(0)));
+        @include should(expect($rand), to(be-less-than(10)));
     }
 }
 
