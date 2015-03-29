@@ -9,7 +9,7 @@
 //     number-rand(0, 10)   			// >0 and <10
 
 @function number-rand($min: null, $max: null, $factor: 1000000000) {
-    @if $min != null and $max = null {
+    @if $min != null and $max != null {
         @return floor(random($factor) / $factor * $max) + $min;
     }
     @return false;
