@@ -3,6 +3,10 @@
 // @param {List} $list                  - list to get the value
 // 
 // @return {*}
+//
+// @example
+//     list-first("a" "b" "c") 			// "a"
+//     list-first(1 2 3)  				// 1
 
 @function list-first($list) {
     @return nth($list, 1);

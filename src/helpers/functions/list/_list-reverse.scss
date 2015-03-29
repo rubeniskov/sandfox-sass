@@ -1,8 +1,11 @@
 // Reverses the order of `$list`.
 //
-// @param {List} $list - list to reverse
+// @param {List} $list                  - list to reverse
 //
 // @return {List}
+//
+// @example
+//     list-reverse("d" "c" "b" "a")    // ("a" "b" "c" "d")
 
 @function list-reverse($list) {
     $length: length($list);
