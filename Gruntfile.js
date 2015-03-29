@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
 
-    var path = require("path"),
+    var path    = require("path"),
 
-        pkg = grunt.file.readJSON("package.json"),
+        time    = require('time-grunt')(grunt),
+
+        pkg     = grunt.file.readJSON("package.json"),
 
         config =
         ({
@@ -13,7 +15,7 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded',
 
-                    sourceMap: true,
+                    sourceMap: false,
 
                     includePaths: [
                         './node_modules/bootcamp/dist'
@@ -21,6 +23,10 @@ module.exports = function(grunt) {
                 },
 
                 dev: {
+                    options: {
+                        sourceMap: true
+                    },
+
                     files: {
                         './dist/sandfox.css': './src/main.scss'
                     }
@@ -28,13 +34,13 @@ module.exports = function(grunt) {
 
                 unit: {
                     files: {
-                        './dist/sandfox.unit.css': './test/unit/unit.scss'
+                        './test/report/unit.report.css': './test/unit/unit.scss'
                     }
                 },
 
                 travis: {
                     files: {
-                        './dist/sandfox.unit.css': './test/unit/unit.travis.scss'
+                        './test/report/unit.report.css': './test/unit/unit.travis.scss'
                     }
                 }
             },
@@ -53,7 +59,7 @@ module.exports = function(grunt) {
                 }
             },
         });
-
+    
     grunt.initConfig(config);
 
     grunt.loadNpmTasks('grunt-sass');

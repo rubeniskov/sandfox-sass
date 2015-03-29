@@ -1,9 +1,14 @@
-// Returns the arccosine of a number.
-// @param {Number} $x A number between -1 and 1.
+// Returns the arccosine of `$x`.
+//
+// @param {Number} $x 					- A number between -1 and 1.
+//
+// @return {Number}
+//
 // @example
-//     math-acos(0.1) // 1.47063
-//     math-acos(-1)  // 3.14159
-@function math-acos ($x) {
+//     math-acos(0.1) 					// 1.47063
+//     math-acos(-1)  					// 3.14159
+
+@function math-acos($x) {
     @if $x > 1 or $x < -1 {
         @warn "Argument for `math-acos()` must be a number between -1 and 1";
         @return null;

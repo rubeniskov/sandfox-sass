@@ -3,6 +3,10 @@
 // @param {List} $list                  - list to get the value
 // 
 // @return {*}
+//
+// @example
+//     list-last("a" "b" "c") 			// "c"
+//     list-last(1 2 3)  				// 3
 
 @function list-last($list) {
     @return nth($list, length($list));

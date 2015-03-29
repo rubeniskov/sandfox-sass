@@ -1,11 +1,12 @@
-// Utils functions
-@import "utils/utils";
-
-// Unit functions
-@import "unit/unit";
-
-// Math functions
+// Type functions
 @import "math/math";
 
-// List functions
-@import "list/list";
+@import "number/number",
+//		"string/string",
+		"list/list";
+//		"map/map";
+//		"color/color";
+
+// Utils functions
+@import "utils/utils";
+        //"media/media";

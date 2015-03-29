@@ -5,6 +5,10 @@
 // @param {String} $separator ('space') - list separator
 //
 // @return {List | Null}
+//
+// @example
+//     list-explode("abc")              // ("a" "b" "c")
+//     list-explode("a--b--c", "--")    // ("a" "b" "c")
 
 @function list-explode( $string, $delimiter: "", $separator: "space") {
     @if type-of($string) !="string" {

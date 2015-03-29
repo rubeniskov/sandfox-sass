@@ -1,0 +1,104 @@
+// Media functions
+@include describe("Function media-merge-features") {
+	@include it("should merge the features with the correct values for each feature") {
+
+		$media-features: media-merge-features((min-height: 100px,max-height: 100px), (min-height: 200px,max-height: 300px));
+
+    	@include should(expect(map-get($media-features, "min-height")), to(equal(100px)));
+    	@include should(expect(map-get($media-features, "max-height")), to(equal(300px)));
+    	@include should(expect(map-keys($media-features)), to(have-length-of(2)));
+    	@include should(expect($media-features), to(equal((min-height: 100px, max-height: 300px))));
+	}
+}
+
+// Media functions
+@include describe("Function media-parse-feature") {
+	@include it("should merge the features with the correct values for each feature") {
+		
+		$media-feature: media-parse-feature("<100px");
+
+    	@include should(expect(map-get($media-feature, "max-width")), to(equal(100px)));
+	}
+}
+
+$args: "<100", "<100px" "<200px" ">300px", "<400" ">500", "<600" ">700";
+
+$q: null; //media( $args... );
+
+/** 
+    
+    ARGS #{$args}    
+
+    RETURN #{$q}
+
+    DEBUG ARGS #{(sl-debug( $args, false ))}
+
+    DEBUG RETURN #{(sl-debug( $q, false ))}
+
+*/;
+
+
+$args: ">100";
+
+$q: null;//media-parse-query( $args );
+
+/** 
+    
+    ARGS #{$args}    
+
+    RETURN #{$q}
+
+    DEBUG ARGS #{(sl-debug( $args, false ))}
+
+    DEBUG RETURN #{(sl-debug( $q, false ))}
+
+    DEBUG RETURN #{(sl-debug( $q, true ))}
+
+*/;
+
+$args: ((min-height:100px,max-height:100px),(min-height:200px,max-height:300px));
+
+$q: media-merge-features($args...);//media-parse-query( $args );
+
+/** 
+    
+    ARGS #{$args}    
+
+    RETURN #{$q}
+
+    DEBUG ARGS #{(sl-debug( $args, false ))}
+
+    DEBUG RETURN #{(sl-debug( $q, false ))}
+
+    DEBUG RETURN #{(sl-debug( $q, true ))}
+
+*/;
+
+/*
+height: 0,
+        width:0,
+        
+        device-height:0,
+        device-width:0,
+
+        aspect-ratio: 0,
+
+        device-aspect-ratio: 0,
+
+        min-height: 0,
+        max-height: 99999,
+        min-width: 0,
+        max-width: 99999,
+
+        min-device-height: 0,
+        max-device-height: 99999,
+        min-device-width: 0,
+        max-device-width: 99999,
+
+
+        min-aspect-ratio: 0,
+        max-aspect-ratio: 99999,
+
+        min-device-aspect-ratio: 0,
+        max-device-aspect-ratio: 99999
+*/

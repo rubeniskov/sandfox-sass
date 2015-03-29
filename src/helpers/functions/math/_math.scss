@@ -1,6 +1,9 @@
 // Constants
 @import "math-constants";
 
+// Transform
+@import "math-abs";
+
 // Exponentiation
 @import "math-pow";
 
@@ -11,27 +14,33 @@
 @import "math-sqrt";
 
 // Exponential
-@import "math-exp";
-@import "math-frexp";
-@import "math-ldexp";
+@import "math-exp",
+	 	"math-frexp",
+	 	"math-ldexp";
 
 // Logarithms
 @import "math-log";
 
-// Polynomial Approximation
+// Euclidean algorithm
+@import "math-gcd";
 
+// Polynomial approximation
 @import "math-maclaurin";
 
+// Error Gauss Functions
+@import "math-erf",
+		"math-erfc";
+
 // Trigonometric
-@import "math-sin";
-@import "math-cos";
-@import "math-tan";
-@import "math-csc";
-@import "math-sec";
-@import "math-cot";
+@import "math-sin",
+		"math-cos",
+		"math-tan",
+		"math-csc",
+		"math-sec",
+		"math-cot";
 
 // Inverse trigonometric
-@import "math-asin";
-@import "math-acos";
-@import "math-atan";
-@import "math-atan2";
+@import "math-asin",
+		"math-acos",
+		"math-atan",
+		"math-atan2";
