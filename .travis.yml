@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-  	- "0.12"
+- "0.12"
 before_install: 
-	- ruby --version
-	- node --version
+- ruby --version
+- node --version
 install: 
-	- npm install
-after_install:
-	- npm install -g grunt-cli
-	- gem install compass  	
+- npm install
+- npm install -g grunt-cli
+- gem install compass 
 script:
-	- npm run ci-test
-	- compass compile --force --time --debug-info --config=test/ci-config/.compass.cfg.travis.rb
+- npm run ci-test
+- compass compile --force --time --debug-info --config=test/ci-config/.compass.cfg.travis.rb
