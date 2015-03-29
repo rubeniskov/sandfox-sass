@@ -1,3 +1,13 @@
+// Transform `$string` to number.
+//
+// @param {Number}  $string           - number to be converted
+//
+// @return {Number}
+//
+// @example
+//     number-cast("1px")             // 1px
+//     number-cast("-1em")            // -1em
+
 @function number-cast($string) {
   // Result
   $result: 0;
