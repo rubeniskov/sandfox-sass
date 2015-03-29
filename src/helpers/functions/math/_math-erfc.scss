@@ -5,8 +5,8 @@
 // @return {Number}                     - Return a value between 0 and 2
 //
 // @example
-//     math-erfc(-1)                     // -1.8427007929
-//     math-erfc(2)                      // 0.004677735
+//     math-erfc(-1)                    // -1.8427007929
+//     math-erfc(2)                     // 0.004677735
 
 @function math-erfc($x) {
     @return ( 1.0 - math-erf($x));
