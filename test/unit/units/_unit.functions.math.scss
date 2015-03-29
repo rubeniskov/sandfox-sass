@@ -77,6 +77,15 @@ Math Functions
 }
 
 /* Polynomial approximation */
+@include describe("Function math-maclaurin") {
+    @include it("should calculate the error function of a number") {
+        @include should(expect(math-maclaurin(1,10,1)), to(be-close-to(0.9999997265, 5)));
+        @include should(expect(math-maclaurin(2,10,2)), to(be-close-to(1.9997261793, 5)));
+        @include should(expect(math-maclaurin(3,10,3)), to(be-close-to(2.9847842891, 5)));
+    }
+}
+
+/* Polynomial approximation */
 @include describe("Function math-erf") {
     @include it("should calculate the error function of a number") {
         @include should(expect(math-erf(-4)), to(equal(-1)));
