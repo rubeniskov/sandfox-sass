@@ -1,5 +1,11 @@
 # Changelog
 
+## version : [`0.10.0`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.10.0)
+
+ - [update: _base.scss file added sanitize.scss](https://github.com/foxnet-git/sandfox-sass/commit/6f69be715ce89906de430fd1bc5bb809d18e9450)
+ - [add: _sanitize.scss file](https://github.com/foxnet-git/sandfox-sass/commit/82f446ca3beb82f94bd4763fd7a53e8aa2bad174)
+ - [remove: _normalize.scss and _reset.scss](https://github.com/foxnet-git/sandfox-sass/commit/c3e6b7e6c5d0dceafd32bd9d922a44edac3a4eb1)
+
 ## version : [`0.9.2`](https://github.com/foxnet-git/sandfox-sass/releases/tag/v0.9.2)
 
  - [fix: devDependecy grunt-sass change git source by tarball](https://github.com/foxnet-git/sandfox-sass/commit/92aeec5db8788ee8dd36c6f1dec9a76d02ce708e)
